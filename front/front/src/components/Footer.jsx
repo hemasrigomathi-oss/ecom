@@ -66,18 +66,18 @@ function Footer() {
 
         <div className="footer-column">
           <h3>SHOP</h3>
-          <Link to="/products">All Products</Link>
+          <Link to="/">Home</Link>
           <Link to="/products">New Arrivals</Link>
-          <Link to="/products">Trending</Link>
-          <Link to="/cart">Cart</Link>
+          <Link to="/about">About</Link>
+          <Link to="/contact">Contact</Link>
         </div>
 
         <div className="footer-column">
           <h3>ACCOUNT</h3>
           <Link to="/orders">My Orders</Link>
-          <Link to="/addresses">My Addresses</Link>
-          <Link to="/cart">Shopping Cart</Link>
-          <Link to="/order">Checkout</Link>
+          <Link to="/cart">Cart</Link>
+          <Link to="/orders">History</Link>
+          <Link to="/profile">Profilet</Link>
         </div>
 
         <div className="footer-column">
