@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { clearOrders } from "../redux/orderSlice";
-import "./orders.css";
+import "./history.css";
 
 function Orders() {
   const dispatch = useDispatch();

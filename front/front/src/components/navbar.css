@@ -23,35 +23,27 @@
 }
 
 .navbar-brand {
-  font-family: "Poppins", Arial, sans-serif;
-  font-size: 23px;
-  font-weight: 700;
-  letter-spacing: 0.8px;
-  color: #ffffff !important;
+  display: flex;
+  align-items: center;
+  padding: 0;
+  margin: 0;
   text-decoration: none;
-  position: relative;
-  transition: all 0.35s ease;
 }
 
-.navbar-brand::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -5px;
-  width: 0;
-  height: 2px;
-  background: #ffc107;
-  border-radius: 10px;
-  transition: width 0.35s ease;
+.navbar-logo {
+  width: 125px;
+  height: 48px;
+  object-fit: contain;
+  display: block;
+  border: none;
+  border-radius: 100%;
+  box-shadow: none;
+  background: transparent;
+  transition: transform 0.3s ease;
 }
 
-.navbar-brand:hover {
-  color: #ffc107 !important;
-  transform: translateY(-1px);
-}
-
-.navbar-brand:hover::after {
-  width: 100%;
+.navbar-logo:hover {
+  transform: scale(1.2);
 }
 
 .navbar-nav {
@@ -96,7 +88,6 @@
 
 .navbar-nav .nav-link.active {
   color: #ffc107 !important;
-  font-weight: 600;
 }
 
 .navbar-nav .nav-link.active::after {
@@ -110,22 +101,14 @@
 }
 
 .cart-count {
-  font-family: "Poppins", Arial, sans-serif;
   font-size: 9px;
   font-weight: 700;
-  font-style: normal;
   color: #ffc107;
   margin-left: 4px;
   position: relative;
   top: -6px;
   line-height: 1;
-  transition: all 0.3s ease;
   animation: cartPop 0.35s ease;
-}
-
-.nav-link:hover .cart-count {
-  color: #ffffff;
-  transform: translateY(-1px) scale(1.1);
 }
 
 @keyframes cartPop {
@@ -141,6 +124,7 @@
 
   100% {
     transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -148,11 +132,6 @@
   border: none;
   padding: 7px 9px;
   border-radius: 8px;
-  transition: all 0.3s ease;
-}
-
-.navbar-toggler:hover {
-  background: rgba(255, 193, 7, 0.1);
 }
 
 .navbar-toggler:focus {
@@ -165,8 +144,9 @@
     padding: 12px 0;
   }
 
-  .navbar-brand {
-    font-size: 20px;
+  .navbar-logo {
+    width: 105px;
+    height: 40px;
   }
 
   .navbar-nav {
@@ -202,9 +182,9 @@
     padding: 10px 0;
   }
 
-  .navbar-brand {
-    font-size: 18px;
-    letter-spacing: 0.5px;
+  .navbar-logo {
+    width: 95px;
+    height: 38px;
   }
 
   .navbar-nav .nav-link {
@@ -216,15 +196,5 @@
     font-size: 8px;
     margin-left: 3px;
     top: -5px;
-  }
-}
-
-@media (max-width: 360px) {
-  .navbar-brand {
-    font-size: 17px;
-  }
-
-  .navbar-nav .nav-link {
-    font-size: 12px;
   }
 }

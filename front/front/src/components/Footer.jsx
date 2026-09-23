@@ -8,7 +8,7 @@ function Footer() {
       <div className="footer-main">
         <div className="footer-brand">
           <Link to="/" className="footer-logo">
-            SHOPPY
+            VEYLO
           </Link>
 
           <p>
@@ -76,8 +76,8 @@ function Footer() {
           <h3>ACCOUNT</h3>
           <Link to="/orders">My Orders</Link>
           <Link to="/cart">Cart</Link>
-          <Link to="/orders">History</Link>
-          <Link to="/profile">Profilet</Link>
+          <Link to="/history">History</Link>
+          <Link to="/profile">Profile</Link>
         </div>
 
         <div className="footer-column">
@@ -97,7 +97,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        <p>© 2026 SHOPPY. All Rights Reserved.</p>
+        <p>© 2026 VEYLO. All Rights Reserved.</p>
 
         <div>
           <span>Privacy Policy</span>

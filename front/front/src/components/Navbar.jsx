@@ -1,15 +1,11 @@
 import { Link } from "react-router-dom";
 import { useSelector } from "react-redux";
 import "./navbar.css";
+import logo from "../images/ecomm logo.png";
 
 function Navbar() {
+  const cartItems = useSelector((state) => state.cart.cartItems);
 
-  // Get cart items from Redux
-  const cartItems = useSelector(
-    (state) => state.cart.cartItems
-  );
-
-  // Calculate total quantity in cart
   const cartCount = cartItems.reduce(
     (total, item) => total + item.quantity,
     0
@@ -17,18 +13,12 @@ function Navbar() {
 
   return (
     <nav className="navbar navbar-expand-lg bg-dark navbar-dark">
-
       <div className="container">
-
-        {/* Logo */}
-        <Link
-          className="navbar-brand fw-bold"
-          to="/"
-        >
-          Shoppy
+        <Link className="navbar-brand" to="/">
+          <img src={logo} alt="Veylo Logo" className="navbar-logo" />
+          {/* <h1>veylo</h1> */}
         </Link>
 
-        {/* Mobile Menu Button */}
         <button
           className="navbar-toggler"
           type="button"
@@ -38,104 +28,67 @@ function Navbar() {
           <span className="navbar-toggler-icon"></span>
         </button>
 
-        {/* Navigation */}
-        <div
-          className="collapse navbar-collapse"
-          id="navbarNav"
-        >
-
+        <div className="collapse navbar-collapse" id="navbarNav">
           <ul className="navbar-nav ms-auto">
-
-            {/* Home */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/"
-              >
+              <Link className="nav-link" to="/">
                 Home
               </Link>
             </li>
 
-            {/* Products */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/products"
-              >
+              <Link className="nav-link" to="/products">
                 Products
               </Link>
             </li>
 
-            {/* Cart */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/cart"
-              >
+              <Link className="nav-link" to="/cart">
                 Cart
-
                 {cartCount > 0 && (
-                  <sup className="cart-count">
-                    {cartCount}
-                  </sup>
+                  <sup className="cart-count">{cartCount}</sup>
                 )}
               </Link>
             </li>
 
-            {/* Order */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/order"
-              >
+              <Link className="nav-link" to="/order">
                 Order
               </Link>
             </li>
 
-            {/* My Order */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/orders"
-              >
+              <Link className="nav-link" to="/history">
                 History
               </Link>
             </li>
 
-            {/* Addresses */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/profile"
-              >
+              <Link className="nav-link" to="/profile">
                 Profile
               </Link>
             </li>
 
-            {/* About */}
             <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/about"
-              >
+              <Link className="nav-link" to="/about">
                 About
               </Link>
             </li>
-               <li className="nav-item">
-              <Link
-                className="nav-link"
-                to="/contact"
-              >
+
+            <li className="nav-item">
+              <Link className="nav-link" to="/contact">
                 Contact
               </Link>
             </li>
 
+            <li className="nav-item">
+              <Link className="nav-link" to="/login">
+                Login
+              </Link>
+            </li>
           </ul>
-
         </div>
-
       </div>
-
     </nav>
   );
 }
